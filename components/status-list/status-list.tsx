@@ -95,6 +95,9 @@ function StatusList({ filter, cityFilter, service, mode }: Props) {
   ) {
     return (
       <StyledStatusList>
+        <div style={{ width: "100%" }}>
+            <button onClick={fetchData}>Refresh Page</button>
+        </div>
         {(data as JiraService[])
           .filter((el) =>
             el.jiraServiceName.toLowerCase().includes(filter.toLowerCase())
@@ -133,6 +136,9 @@ function StatusList({ filter, cityFilter, service, mode }: Props) {
                 : "It looks like some services are down"}
             </p>
           </section>
+          <div style={{ width: "100%" }}>
+            <button onClick={fetchData}>Refresh Page</button>
+          </div>
           {!issuesToday.length && mode === "today" && (
             <Image
               src={Nothing.src}
