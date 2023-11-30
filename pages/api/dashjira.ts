@@ -5,7 +5,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<DashboardJira>
 ) {
-  let data = await fetch("https://eden-front.vercel.app/dashboard/jira").then((data) => data.json());
+  let data = await fetch("https://eden-three.vercel.app/dashboard/jira").then((data) => data.json());
 
   let sub = data["History of the Last Fifty Incidents"]
   for(const el of ["None", "Major"]) {

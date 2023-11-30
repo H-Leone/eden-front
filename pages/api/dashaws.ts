@@ -6,7 +6,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<DashboardAws>
 ) {
-  let data = await fetch("https://eden-front.vercel.app/dashboard/aws").then((data) => data.json());
+  let data = await fetch("https://eden-three.vercel.app/dashboard/aws").then((data) => data.json());
 
   data['Incidents by Region'] = data['Incidents by Region'].map((el: any) => {
     return ({
