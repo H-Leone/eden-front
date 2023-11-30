@@ -46,13 +46,13 @@ function DashboardsPage() {
   const url = () => {
     switch (service?.name) {
       case "oracle":
-        return "https://eden-three.vercel.app/api/dashoracle";
+        return "https://eden-front.vercel.app/api/dashoracle";
       case "jira":
-        return "https://eden-three.vercel.app/api/dashjira";
+        return "https://eden-front.vercel.app/api/dashjira";
       case "aws":
-        return "https://eden-three.vercel.app/api/dashaws";
+        return "https://eden-front.vercel.app/api/dashaws";
       default:
-        return "https://eden-three.vercel.app/api/error";
+        return "https://eden-front.vercel.app/api/error";
     }
   };
 
