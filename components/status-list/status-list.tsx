@@ -26,13 +26,13 @@ function StatusList({ filter, cityFilter, service, mode }: Props) {
   const url = () => {
     switch (service) {
       case "oracle":
-        return "http://https://eden-three.vercel.app/api/oracle";
+        return "https://eden-three.vercel.app/api/oracle";
       case "jira":
-        return "http://https://eden-three.vercel.app/api/jira";
+        return "https://eden-three.vercel.app/api/jira";
       case "aws":
-        return "http://https://eden-three.vercel.app/api/aws";
+        return "https://eden-three.vercel.app/api/aws";
       default:
-        return "http://https://eden-three.vercel.app/api/error";
+        return "https://eden-three.vercel.app/api/error";
     }
   };
 

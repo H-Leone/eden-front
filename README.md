@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://https://eden-three.vercel.app](http://https://eden-three.vercel.app) with your browser to see the result.
+Open [https://eden-three.vercel.app](https://eden-three.vercel.app) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

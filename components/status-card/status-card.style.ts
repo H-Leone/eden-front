@@ -6,7 +6,6 @@ export const StyledStatusCard = styled("div")<{
     "& > section": {
         zIndex: 5,
         width: 320,
-        height: 60,
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -16,8 +15,9 @@ export const StyledStatusCard = styled("div")<{
         backgroundColor: "#303133",
         userSelect: "none",
         cursor: "pointer",
-    
+        
         "& > div": {
+            height: 60,
             display: "flex",
             alignItems: "center",
             gap: 10,
