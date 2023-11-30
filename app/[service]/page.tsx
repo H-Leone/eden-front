@@ -72,9 +72,6 @@ function ServicePage({ params: { service } }: PageProps) {
                         setMode(mode === "today" ? "reports" : "today");
                     }}>{mode === "today" ? "Check last incidents" : "Go back to today’s report"}</button>
                 )}
-                <button onClick={() => {
-                    revalidatePath(`/{service}`);
-                }}>Refresh Page</button>
             </div>
             <StatusList cityFilter={cityFilter} filter={filter} service={service} mode={mode} />
         </div>

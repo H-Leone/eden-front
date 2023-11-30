@@ -26,26 +26,27 @@ function StatusList({ filter, cityFilter, service, mode }: Props) {
   const url = () => {
     switch (service) {
       case "oracle":
-        return "http://localhost:3000/api/oracle";
+        return "http://https://eden-three.vercel.app/api/oracle";
       case "jira":
-        return "http://localhost:3000/api/jira";
+        return "http://https://eden-three.vercel.app/api/jira";
       case "aws":
-        return "http://localhost:3000/api/aws";
+        return "http://https://eden-three.vercel.app/api/aws";
       default:
-        return "http://localhost:3000/api/error";
+        return "http://https://eden-three.vercel.app/api/error";
     }
   };
 
+  async function fetchData() {
+    const payload = await fetch(url(), {
+      method: "GET",
+      next: {
+        revalidate: 2,
+      },
+    }).then((data) => data.json());
+    setData(payload);
+  }
+
   useEffect(() => {
-    async function fetchData() {
-      const payload = await fetch(url(), {
-        method: "GET",
-        next: {
-          revalidate: 2,
-        },
-      }).then((data) => data.json());
-      setData(payload);
-    }
     fetchData();
   }, []);
 
@@ -60,6 +61,9 @@ function StatusList({ filter, cityFilter, service, mode }: Props) {
   ) {
     return (
       <StyledStatusList>
+        <div style={{ width: "100%" }}>
+            <button onClick={fetchData}>Refresh Page</button>
+        </div>
         {(data as Region[])
           .filter((el) =>
             cityFilter
@@ -68,7 +72,7 @@ function StatusList({ filter, cityFilter, service, mode }: Props) {
                 el.regionName.includes("Vinhedo")
           )
           .map((el) => (
-            <>
+            <>\\
               {el.serviceHealthReports
                 .filter((el) =>
                   el.serviceName.toLowerCase().includes(filter.toLowerCase())
